@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="src/main.css" />
+    <script type="module" src="src/script.ts" defer></script>
+    <title>Speed Typing Test</title>
+  </head>
+
+  <body class="min-h-svh grid">
+    <main class="font-['Roboto'] bg-neutral-900 text-neutral-200">
+      <section class="md:container flex flex-col mx-auto h-full p-3">
+        <!-- ANCHOR Stats Wrapper -->
+        <div class="grid grid-cols-1 gap-3.5">
+          <div class="flex justify-between">
+            <img src="src/assets/images/logo-small.svg" alt="logo icon" />
+
+            <div class="flex items-center space-x-3">
+              <img src="src/assets/images/icon-personal-best.svg" alt="trophy icon" width="20" height="20" />
+              <p>Best: <span>92 WPM</span></p>
+            </div>
+          </div>
+
+          <div class="flex justify-around text-center">
+            <p>WPM: <br /><span>0</span></p>
+            <p class="border-x border-zinc-400/40 px-7">Accuracy: <br /><span>0</span></p>
+            <p>Time: <br /><span>0</span></p>
+          </div>
+
+          <div class="flex">
+            <div class="relative flex-1">
+              <input type="checkbox" class="peer hidden" name="toggleDifficultyDropdown" id="toggleDifficultyDropdown" />
+
+              <label for="toggleDifficultyDropdown" class="peer-checked:[&_img]:rotate-0 flex justify-center gap-2 border border-zinc-500 rounded-md">
+                Easy
+                <img class="transition-transform duration-300 rotate-180" src="src/assets/images/icon-down-arrow.svg" alt="arrow icon" />
+              </label>
+
+              <div class="invisible peer-checked:visible absolute w-full mt-1.5 rounded-md bg-zinc-600/70 p-2.5 space-y-3" id="difficultyDropdown">
+                <div class="flex flex-row-reverse items-center [justify-content:start] gap-2">
+                  <label for="easy">Easy</label>
+                  <input type="radio" name="difficulty" id="easy" checked />
+                </div>
+                <div class="flex flex-row-reverse items-center [justify-content:start] gap-2">
+                  <label for="medium">Medium</label>
+                  <input type="radio" name="difficulty" id="medium" />
+                </div>
+                <div class="flex flex-row-reverse items-center [justify-content:start] gap-2">
+                  <label for="hard">Hard</label>
+                  <input type="radio" name="difficulty" id="hard" />
+                </div>
+              </div>
+            </div>
+            <div class="relative flex-1">
+              <label for="toggleTimeDropdown">
+                <span class="flex justify-center gap-1.5">Easy<img src="src/assets/images/icon-down-arrow.svg" alt="" /></span>
+                <input type="checkbox" class="absolute right-0 top-0" name="toggleTimeDropdown" id="toggleTimeDropdown" />
+              </label>
+            </div>
+          </div>
+          <hr />
+        </div>
+
+        <!-- ANCHOR Typing Wrapper -->
+        <div class="flex-1">
+          <p>Test</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
