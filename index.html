@@ -29,43 +29,93 @@
             <p>Time: <br /><span>0</span></p>
           </div>
 
-          <div class="flex">
+          <!-- NOTE Difficulty dropdown menu -->
+          <div class="flex gap-3">
             <div class="relative flex-1">
               <input type="checkbox" class="peer hidden" name="toggleDifficultyDropdown" id="toggleDifficultyDropdown" />
 
-              <label for="toggleDifficultyDropdown" class="peer-checked:[&_img]:rotate-0 flex justify-center gap-2 border border-zinc-500 rounded-md">
+              <label for="toggleDifficultyDropdown" class="peer-checked:[&_img]:rotate-0 flex justify-center gap-2 border border-zinc-500 rounded-md cursor-pointer py-1.5 hover:bg-zinc-800">
                 Easy
                 <img class="transition-transform duration-300 rotate-180" src="src/assets/images/icon-down-arrow.svg" alt="arrow icon" />
               </label>
 
-              <div class="invisible peer-checked:visible absolute w-full mt-1.5 rounded-md bg-zinc-600/70 p-2.5 space-y-3" id="difficultyDropdown">
-                <div class="flex flex-row-reverse items-center [justify-content:start] gap-2">
-                  <label for="easy">Easy</label>
-                  <input type="radio" name="difficulty" id="easy" checked />
-                </div>
-                <div class="flex flex-row-reverse items-center [justify-content:start] gap-2">
-                  <label for="medium">Medium</label>
-                  <input type="radio" name="difficulty" id="medium" />
-                </div>
-                <div class="flex flex-row-reverse items-center [justify-content:start] gap-2">
-                  <label for="hard">Hard</label>
-                  <input type="radio" name="difficulty" id="hard" />
+              <div class="absolute w-full grid grid-rows-[0fr] peer-checked:grid-rows-[1fr] transition-all duration-300 ease-out">
+                <div class="overflow-hidden rounded-md mt-1.5 bg-zinc-600/70 backdrop-blur-sm">
+                  <div class="flex flex-row-reverse items-center [justify-content:start] gap-2 border-b border-zinc-500/30 p-2 hover:bg-zinc-500/50">
+                    <label for="easy">Easy</label>
+                    <input
+                      type="radio"
+                      class="appearance-none w-4 h-4 border-2 border-gray-400 rounded-full bg-transparent checked:border-blue-500 checked:border-[5px] transition-all duration-200"
+                      name="difficulty"
+                      id="easy"
+                      checked />
+                  </div>
+
+                  <div class="flex flex-row-reverse items-center [justify-content:start] gap-2 border-b border-zinc-500/30 p-2 hover:bg-zinc-500/50 transition-colors cursor-pointer">
+                    <label for="medium">Medium</label>
+                    <input
+                      type="radio"
+                      class="appearance-none w-4 h-4 border-2 border-gray-400 rounded-full bg-transparent checked:border-blue-500 checked:border-[5px] transition-all duration-200"
+                      name="difficulty"
+                      id="medium" />
+                  </div>
+
+                  <div class="flex flex-row-reverse items-center [justify-content:start] gap-2 p-2 hover:bg-zinc-500/50 transition-colors cursor-pointer">
+                    <label for="hard">Hard</label>
+                    <input
+                      type="radio"
+                      class="appearance-none w-4 h-4 border-2 border-gray-400 rounded-full bg-transparent checked:border-blue-500 checked:border-[5px] transition-all duration-200"
+                      name="difficulty"
+                      id="hard" />
+                  </div>
                 </div>
               </div>
             </div>
+
+            <!-- NOTE Time dropdown menu -->
             <div class="relative flex-1">
-              <label for="toggleTimeDropdown">
-                <span class="flex justify-center gap-1.5">Easy<img src="src/assets/images/icon-down-arrow.svg" alt="" /></span>
-                <input type="checkbox" class="absolute right-0 top-0" name="toggleTimeDropdown" id="toggleTimeDropdown" />
+              <input type="checkbox" class="peer hidden" name="toggleTimeDropdown" id="toggleTimeDropdown" />
+
+              <label for="toggleTimeDropdown" class="peer-checked:[&_img]:rotate-0 flex justify-center gap-2 border border-zinc-500 rounded-md cursor-pointer py-1.5 hover:bg-zinc-800">
+                Timed (60s)
+                <img class="transition-transform duration-300 rotate-180" src="src/assets/images/icon-down-arrow.svg" alt="arrow icon" />
               </label>
+
+              <div class="absolute w-full grid grid-rows-[0fr] peer-checked:grid-rows-[1fr] transition-all duration-300 ease-out">
+                <div class="overflow-hidden rounded-md mt-1.5 bg-zinc-600/70 backdrop-blur-sm">
+                  <div class="flex flex-row-reverse items-center [justify-content:start] gap-2 border-b border-zinc-500/30 p-2 hover:bg-zinc-500/50">
+                    <label for="timed">Timed (60s)</label>
+                    <input
+                      type="radio"
+                      class="appearance-none w-4 h-4 border-2 border-gray-400 rounded-full bg-transparent checked:border-blue-500 checked:border-[5px] transition-all duration-200"
+                      name="time"
+                      id="timed"
+                      checked />
+                  </div>
+
+                  <div class="flex flex-row-reverse items-center [justify-content:start] gap-2 border-b border-zinc-500/30 p-2 hover:bg-zinc-500/50 transition-colors cursor-pointer">
+                    <label for="passage">Passage</label>
+                    <input
+                      type="radio"
+                      class="appearance-none w-4 h-4 border-2 border-gray-400 rounded-full bg-transparent checked:border-blue-500 checked:border-[5px] transition-all duration-200"
+                      name="time"
+                      id="passage" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <hr />
         </div>
 
         <!-- ANCHOR Typing Wrapper -->
-        <div class="flex-1">
-          <p>Test</p>
+        <div class="relative flex-1 my-3 p-0.5 py-3 border-y border-zinc-400/40">
+          <textarea class="h-full w-full resize-none" name="textPassage" id="textPassage"></textarea>
+          <div class="absolute inset-0 backdrop-blur-2xl grid place-items-center">
+            <div>
+              <button type="button">Start Typing Test</button>
+              <p>Or click text and start typing</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
