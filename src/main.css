@@ -19,17 +19,6 @@
   --yellow-400: hsl(49, 85%, 70%);
 }
 
-.dropdown-initial {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.4s ease;
-  interpolate-size: allow-keywords;
-}
-
-.dropdown-slide {
-  height: auto;
-}
-
 .fade-in {
   opacity: 1;
 
