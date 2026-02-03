@@ -35,11 +35,15 @@ const currentQuizIcon = document.getElementById("currentQuizIcon") as HTMLDivEle
 const resultsElem = document.getElementById("results") as HTMLElement;
 const resultsScreen = document.getElementById("resultsScreen") as HTMLElement;
 const replayQuizElem = document.getElementById("replayQuiz") as HTMLButtonElement;
+const bodyElem = document.body as HTMLBodyElement;
+const switchElem = document.getElementById("switch") as HTMLInputElement;
 
 const quizzes: Quiz[] = await fetchQuizData();
 let questionCounter = 0;
 let correctAnswers = 0;
 let currentQuiz: Question[] | null = null;
+
+switchElem.addEventListener("change", () => (switchElem.checked ? (bodyElem.dataset.state = "light") : (bodyElem.dataset.state = "dark")));
 
 subjectSelection.addEventListener("click", async (e: PointerEvent) => {
   if (!(e.target instanceof HTMLButtonElement)) return;
@@ -92,7 +96,7 @@ async function renderQuiz(currentQuiz: Question[]) {
   let htmlContent = `
     <div class="flex-1 flex flex-col justify-around">
       <div>
-        <span class="text-sm font-light">Question ${questionCounter + 1} of 10</span>
+        <span class="text-sm font-light">Question ${questionCounter} of 10</span>
         <p class="my-3">${currentQuiz[questionCounter].question}</p>
       </div>
       <div class="bar p-1 bg-[#3c4c67] rounded">

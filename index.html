@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="src/main.css" />
     <script type="module" src="src/script.ts" defer></script>
   </head>
-  <body class="min-h-svh grid grid-rows-[auto_1fr] bg-[#313e51] text-white font-['Roboto']">
+  <body class="min-h-svh grid grid-rows-[auto_1fr] bg-[#313e51] text-white font-['Roboto']" data-state="dark">
     <header class="p-3">
       <section class="flex justify-between items-center max-w-5xl mx-auto">
         <div class="flex items-center gap-2.5" id="currentQuizIcon"></div>
@@ -16,7 +16,7 @@
           <img src="src/assets/images/icon-moon-dark.svg" alt="" width="30" height="30" />
           <div class="custom-switcher">
             <label class="relative inline-block w-12 h-6.5">
-              <input type="checkbox" class="opacity-0 w-0 h-0" name="" id="" />
+              <input type="checkbox" class="opacity-0 w-0 h-0" name="switch" id="switch" />
               <span class="slider [ absolute cursor-pointer inset-0 ]"></span>
             </label>
           </div>
