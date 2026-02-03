@@ -6,19 +6,38 @@
   font-display: swap;
 }
 
+body {
+  background-image: url("assets/images/pattern-background-mobile-dark.svg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+.title-screen {
+  transition: transform 1s linear;
+
+  &.quiz-active {
+    transform: translateX(-300%);
+  }
+}
+
+.quiz-screen {
+  transition:
+    transform 1s linear,
+    opacity 1s ease-out;
+  transform: translateX(300%);
+
+  &.quiz-active {
+    transform: translateX(0);
+  }
+}
+
 .custom-switcher {
-  input:checked + .slider {
-    background-color: rgb(96, 3, 255);
-  }
-
-  input:checked + .slider:before {
-    transform: translateX(19px);
-  }
-
   .slider {
-    position: absolute;
-    cursor: pointer;
-    inset: 0;
     background-color: silver;
     transition: 0.4s;
     border-radius: 30px;
@@ -27,7 +46,7 @@
     &::before {
       position: absolute;
       content: "";
-      width: 23px;
+      width: 19px;
       aspect-ratio: 1;
       left: 4px;
       bottom: 4px;
@@ -35,6 +54,14 @@
       transition: 0.4s;
       border-radius: 50%;
     }
+  }
+
+  input:checked + .slider {
+    background-color: rgb(96, 3, 255);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(19px);
   }
 }
 
