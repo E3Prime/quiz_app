@@ -18,8 +18,8 @@ const escapeHTML = (str: string) => {
 
 const fetchQuizData = async () => {
   try {
-    const response = await fetch("src/data.json");
-    if (!response.ok) throw new Error("There was an issue getting the data!");
+    const response = await fetch("data.json");
+    if (!response) throw new Error("There was an issue getting the data!");
     const data = await response.json();
     return [...data.quizzes];
   } catch (e) {
