@@ -11,7 +11,7 @@ A modern, responsive quiz application designed to test web development knowledge
 
 ## 🔗 Links
 
-- **Live Demo Link:**
+- **Live Demo Link:** https://e3prime.github.io/quiz_app
 
 ## 🧠 Quiz Showcase
 
